@@ -6,7 +6,8 @@ compiler:
   - g++
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y libboost-all-dev 
+  - sudo apt-get install -y libboost-python-dev
+  - sudo apt-get install liblapack-dev
   - pip install numpy scipy nose astropy
   - wget https://googledrive.com/host/0B6hIz9tCW5iZdEcybFNjRHFmOEE/tmv0.72.tar.gz && tar -xvf tmv0.72.tar.gz && cd tmv0.72 && sudo scons install && cd -
 install: scons 
