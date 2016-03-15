@@ -21,6 +21,9 @@ development.  For details of algorithms and code validation, please see
     http://arxiv.org/abs/1407.7676
 
 
+
+
+
 Distribution
 ------------
 
@@ -48,6 +51,10 @@ See INSTALL.md for more information.
 
 The code is licensed under a BSD-style license.  See the file LICENSE for more
 details.
+
+![Travis-CI Status](https://travis-ci.org/joezuntz/GalSim.svg?branch=master)
+
+
 
 
 Keeping up-to-date with GalSim
