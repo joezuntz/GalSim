@@ -7,8 +7,8 @@ compiler:
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libboost-all-dev gfortran liblapack-dev libfftw3-dev 
-  - sudo apt-get install python-numpy python-scipy python-nose python-astropy
-  - pip install pyyaml starlink-pyast
+  - sudo apt-get install python-numpy python-scipy python-nose
+  - pip install astropy pyyaml starlink-pyast
   - wget https://googledrive.com/host/0B6hIz9tCW5iZdEcybFNjRHFmOEE/tmv0.72.tar.gz && tar -xvf tmv0.72.tar.gz && cd tmv0.72 && sudo scons install && cd -
 install: scons 
 script: scons tests -j 1
