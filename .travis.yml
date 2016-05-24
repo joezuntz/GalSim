@@ -6,7 +6,7 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libboost-all-dev gfortran liblapack-dev libfftw3-dev python-dev python-numpy python-scipy python-nose
   - pip install astropy pyyaml
-  - cd $HOME && wget https://github.com/rmjarvis/tmv/archive/v0.73.tar.gz && tar -xf v0.73.tar.gz && cd tmv-0.73 && sudo scons install DEBUG=True FLAGS="-O0" && cd -
+  - pushd $HOME && wget https://github.com/rmjarvis/tmv/archive/v0.73.tar.gz && tar -xf v0.73.tar.gz && cd tmv-0.73 && sudo scons install DEBUG=True FLAGS="-O0" && popd
 cache:
     pip: true
     directories:
