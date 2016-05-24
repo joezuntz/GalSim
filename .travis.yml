@@ -1,18 +1,13 @@
 language: python
-python:
-  - "2.7"
 compiler:
-  - clang
   - g++
-env:
-  - LD_LIBRARY_PATH=/usr/local/lib
 before_install:
+  - export PATH=$(echo $PATH | tr ':' "\n" | sed '/\/opt\/python/d' | tr "\n" ":" | sed "s|::|:|g")
   - sudo apt-get -qq update
   - sudo apt-get install -y libboost-all-dev gfortran liblapack-dev libfftw3-dev 
   - sudo apt-get install python-numpy python-scipy python-nose
-  - pip install astropy pyyaml 
-  - wget https://googledrive.com/host/0B6hIz9tCW5iZdEcybFNjRHFmOEE/tmv0.72.tar.gz && tar -xf tmv0.72.tar.gz && cd tmv0.72 && sudo scons install DEBUG=True FLAGS="-O0" && cd -
+  - pip install astropy pyyaml
+  - wget https://github.com/rmjarvis/tmv/archive/v0.73.tar.gz && tar -xf v0.73.tar.gz && cd v0.73 && sudo scons install DEBUG=True FLAGS="-O0" && cd -
 cache: pip
-install: sudo scons
+install: scons
 script: scons tests
-#starlink-pyast
